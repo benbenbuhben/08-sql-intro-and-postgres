@@ -53,32 +53,6 @@ Article.truncateTable = callback => {
     });
 };
 
-// app.post('/articles', bodyParser, (request, response) => {
-//   console.log('New article incoming!');
-//   // COMMENT: What number(s) of the full-stack-diagram.png image correspond to the following line of code? Which method of article.js is interacting with this particular piece of `server.js`? What part of CRUD is being enacted/managed by this particular piece of code?
-//   // PUT YOUR RESPONSE HERE
-//   client.query(
-//     `INSERT INTO
-//     articles(title, author, "authorUrl", category, "publishedOn", body)
-//     VALUES ($1, $2, $3, $4, $5, $6);
-//     `,
-//     [
-//       request.body.title,
-//       request.body.author,
-//       request.body.authorUrl,
-//       request.body.category,
-//       request.body.publishedOn,
-//       request.body.body
-//     ]
-//   )
-//     .then(function() {
-//       response.send('insert complete')
-//     })
-//     .catch(function(err) {
-//       console.error(err);
-//     });
-// });
-
 Article.prototype.insertRecord = function (callback) {
   $.post('/articles', {
     author: this.author,
@@ -104,20 +78,6 @@ Article.prototype.deleteRecord = function (callback) {
       if (callback) callback();
     });
 };
-
-// app.put('/articles/:id', (request, response) => {
-//   // COMMENT: What number(s) of the full-stack-diagram.png image correspond to the following line of code? Which method of article.js is interacting with this particular piece of `server.js`? What part of CRUD is being enacted/managed by this particular piece of code?
-//   // PUT YOUR RESPONSE HERE
-//   client.query(
-//     ` `, []
-//   )
-//     .then(() => {
-//       response.send('update complete')
-//     })
-//     .catch(err => {
-//       console.error(err);
-//     });
-// });
 
 Article.prototype.updateRecord = function (callback) {
   $.ajax({
